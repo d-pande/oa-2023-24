@@ -12,12 +12,10 @@ var layout = {
   };
 
 fetch(
-    // "http://localhost:3000/api" //use "http://localhost:3000" if running sample express backend locally, or replace with your own backend endpoint url
-    // "https://oa-2023-24-backend.onrender.com" //use "http://localhost:3000" if running sample express backend locally, or replace with your own backend endpoint url
-    "https://dssd-oa-v24z.onrender.com"
+    "https://dssd-oa-v24z.onrender.com" //use "http://localhost:3000" if running sample express backend locally, or replace with your own backend endpoint url
 
     ).then(async res => {
-        let a  =  await res.json()
-        console.log(a)
+        let a  =  await res.json() //can only run res.json() once
+        // console.log(a)
         Plotly.newPlot( graphDiv, [a], layout);  //res.json() is being returned from index.js
 })
