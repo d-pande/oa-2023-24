@@ -52,7 +52,8 @@ fs.createReadStream(csvFilePath)
 });
 
 app.use(cors({
-    origin: "http://localhost:5500"
+    // origin: "http://localhost:5500"
+    origin: "https://dssd-oa-v24z.onrender.com"
 }))
 
 app.get("/api", (req, res) => {
