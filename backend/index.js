@@ -56,7 +56,7 @@ app.use(cors({
     origin: "https://dssd-oa-v24z.onrender.com"
 }))
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
     
     res.send({
         ...graphData  //... moves attributes from data to res obj
