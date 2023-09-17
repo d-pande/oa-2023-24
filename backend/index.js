@@ -21,7 +21,6 @@ fs.createReadStream(csvFilePath)
   .on('data', (row) => {
     var year = row['year'];
 
-    // if it has '(', only keep last 4 chars
     if (year.includes('(')) {
         year = year.slice(-4);
     }
@@ -52,14 +51,13 @@ fs.createReadStream(csvFilePath)
 });
 
 app.use(cors({
-    // origin: "http://localhost:5500"
-    origin: "https://dssd-oa-v24z.onrender.com"
+    origin: "http://localhost:5500"
 }))
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
     
     res.send({
-        ...graphData  //... moves attributes from data to res obj
+        ...graphData  //... operator moves attributes from data to res obj
     }).status(200)
 })
 
